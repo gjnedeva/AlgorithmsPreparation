@@ -17,6 +17,10 @@ public class SortingAlgorithms {
 		List<Integer> numbersForBubleSort = Arrays.asList(2, 3, 1, 3, 2, 1, 4);
 		bubleSort(numbersForBubleSort);
 		System.out.println(numbersForBubleSort);
+
+		List<Integer> numbersForInsertionSort = Arrays.asList(2, 3, 1, 3, 2, 1, 4);
+		insertionSort(numbersForInsertionSort);
+		System.out.println(numbersForInsertionSort);
 	}
 
 	/*swap the first with the min element on the right then the second...
@@ -44,7 +48,16 @@ public class SortingAlgorithms {
 	}
 
 	//	simple but not effective best O(n)
+//	ToDO check why not work
 	private static void insertionSort(List<Integer> numbers) {
-
+		for (int i = 1; i < numbers.size(); i++) {
+			int key = numbers.get(i);
+			int j = i - 1;
+			while (j >= 0 && numbers.get(j) > key) {
+				Collections.swap(numbers, j, i);
+				j = j-1;
+			}
+			Collections.swap(numbers, key, j+1);
+		}
 	}
 }
