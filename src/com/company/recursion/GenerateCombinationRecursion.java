@@ -1,7 +1,5 @@
 package com.company.recursion;
 
-import com.sun.codemodel.internal.JGenerable;
-
 import java.util.Arrays;
 
 public class GenerateCombinationRecursion {
@@ -22,7 +20,6 @@ public class GenerateCombinationRecursion {
 		int[] set = new int[]{1, 2, 3, 4};
 		int[] vector = new int [2];
 		GenerateCombination(set,vector, 0,0 );
-
 	}
 
 }
